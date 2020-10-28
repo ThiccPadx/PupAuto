@@ -21,7 +21,4 @@ http.createServer((req, res) => {
   res.write('</body></html>')
   res.end();
 })
-.listen(
-  process.env.PORT,
-  console.log('Server is Running')
-)
+.listen(process.env.PORT || 5050);
