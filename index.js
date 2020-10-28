@@ -4,7 +4,7 @@ const CronJob = require('cron').CronJob;
 
 const browse = require('./browse').browse;
 
-const automation = new CronJob('20 * * * * *', () => {
+const automation = new CronJob('* 3 * * * *', () => {
   browse();
 });
 
