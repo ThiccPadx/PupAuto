@@ -10,8 +10,10 @@ exports.browse = async () => {
         height: 720
     })
     // Israel 150, Brazil 145 ->
+    console.log('Go to site 150');
     await page.goto('https://secure.e-konsulat.gov.pl/Wizyty/Paszportowe/RejestracjaTerminuWizytyPaszportowej.aspx?IDPlacowki=150');
-
+    
+    console.log('Typing...')
     await page.type('#ddlWersjeJezykowe', "Polska");
 
     try {
