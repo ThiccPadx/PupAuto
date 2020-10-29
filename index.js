@@ -10,7 +10,7 @@ let numberOfReq = 0;
 setInterval(() => {
   browse();
   numberOfReq++;
-}, minute * 3)
+}, minute)
 
 http.createServer((req, res) => {
   res.setHeader('Content-type', 'text/html');
