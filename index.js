@@ -4,6 +4,7 @@ const http = require('http');
 
 const browse = require('./browse').browse;
 
+const lastTime = new Date();
 const minute = 1000 * 60;
 let numberOfReq = 0;
 
@@ -21,8 +22,11 @@ http.createServer((req, res) => {
   res.write('<body style="display: flex; justift-content: center; align-items: center; text-align: center; font-family: Arial, Helvetica, sans-serif;">');
   res.write('<div style="width: 100%"><h1>Everything is working just fine!</h1>')
   res.write('<h3>The automation server is running</h3>')
-  res.write('<p>The number of action on the server is ' + numberOfReq + '</p></div>');
-  res.write('</body></html>')
+  res.write('<p>The number of action on the server is ' + numberOfReq + '</p>');
+  res.write('<p>The last time the server was initialized: ');
+  res.write(`${lastTime.getDate()}/${lastTime.getMonth()}/${lastTime.getFullYear()} at `);
+  res.write(`${lastTime.getHours()}:${lastTime.getMinutes()}`);
+  res.write('</p></div></body></html>')
   res.end();
 })
 .listen(process.env.PORT || 5050);
