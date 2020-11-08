@@ -10,7 +10,9 @@ let info = {
   starting: 0,
   goToSite: 0,
   typing: 0,
+  errorRunningBrowser: 0,
   error: 0,
+  blocked: 0,
   notExists: 0,
   finishTask: 0,
 };
@@ -33,9 +35,11 @@ http.createServer((req, res) => {
   res.write(`${lastTime.getHours()}:${lastTime.getMinutes()}</p>`);
   res.write('<ul>')
   res.write(`<li>Starting: ${info.starting}</li>`)
+  res.write(`<li>Error launching browser : ${info.errorRunningBrowser}</li>`)
   res.write(`<li>Go to Site: ${info.goToSite}</li>`)
+  res.write(`<li>Get Blocked!: ${info.blocked}</li>`)
   res.write(`<li>Typing: ${info.typing}</li>`)
-  res.write(`<li>Error: ${info.error}</li>`)
+  res.write(`<li>Error find selector: ${info.error}</li>`)
   res.write(`<li>Not exists: ${info.notExists}</li>`)
   res.write(`<li>Number of finished task: ${info.finishTask}</li>`)
   res.write('</ul>')
